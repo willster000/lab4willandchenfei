@@ -28,6 +28,25 @@ public class BinPacking {
         public int getRemainingSpace() {
             return capacity - currentSize;
         }
+
+        public static int findLargestNumber(List<Integer> numbers, int max) {
+            int largestNumber = 0;
+            int largestNumberIndex = -1;
+
+            for (int i = 0; i < numbers.size(); i++) {
+                int number = numbers.get(i);
+                if (number > largestNumber && number <= max) {
+                    largestNumber = number;
+                    largestNumberIndex = i;
+                }
+            }
+
+            if (largestNumberIndex != -1) {
+                return numbers.remove(largestNumberIndex);
+            } else {
+                return -1;
+            }
+        }
     }
 
     public static void bestFitDecreasing(int binCapacity, int[] items) {
@@ -43,20 +62,26 @@ public class BinPacking {
             availableItems.add(items[i]);
         }
 
+    //     for bin in bins:
+    //     while bin.remainingCapacity() > 0 and numbers:
+    //         num = findLargestNumber(numbers, bin.remainingCapacity())
+    //         if num is not None:
+    //             bin.addNumber(num)
+    //             numbers.remove(num)
+    
+    // return bins
+
         for (Bin bin : bins) {
-            int i = 0;
-            while (i < availableItems.size()) {
-                int item = availableItems.get(i);
-                if (bin.canFit(item)) {
-                    bin.addItem(item);
-                    availableItems.remove(i);
-                } else if (item > bin.getRemainingSpace()) {
-                    break; 
+            while (bin.getRemainingSpace() > 0 && availableItems.size() > 0) {
+                int num = Bin.findLargestNumber(availableItems, bin.getRemainingSpace());
+                if (num != -1) {
+                    bin.addItem(num);
                 } else {
-                    i++; 
+                        break; // If no suitable item is found, break out of the while loop
                 }
             }
         }
+        
 
         int totalUnusedSpace = 0;
         for (Bin bin : bins) {

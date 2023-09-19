@@ -62,15 +62,6 @@ public class BinPacking {
             availableItems.add(items[i]);
         }
 
-    //     for bin in bins:
-    //     while bin.remainingCapacity() > 0 and numbers:
-    //         num = findLargestNumber(numbers, bin.remainingCapacity())
-    //         if num is not None:
-    //             bin.addNumber(num)
-    //             numbers.remove(num)
-    
-    // return bins
-
         for (Bin bin : bins) {
             while (bin.getRemainingSpace() > 0 && availableItems.size() > 0) {
                 int num = Bin.findLargestNumber(availableItems, bin.getRemainingSpace());

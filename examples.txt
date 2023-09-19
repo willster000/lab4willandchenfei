@@ -1,0 +1,22 @@
+Non-optimal example result 
+Bin size: 20 
+Number of items: 15 
+Items: 4 6 15 3 8 19 67 13 12 8 9 7 15 13 2 
+Result: 
+    Bin 1: [19]
+    Bin 2: [15, 4]
+    Bin 3: [15, 3, 2]
+    Unused items: 67 13 13 12 9 8 8 7 6
+
+Optimal example result
+Bin size: 15 
+Number of items: 10 
+Items: 4 5 4 10 7 1 3 7 2 18
+Result: 
+    Bin 1: [10, 5]
+    Bin 2: [7, 7, 1]
+    Bin 3: [4, 4, 3, 2]
+    Unused items: 18
+          
+
+

@@ -1,0 +1,16 @@
+Time efficiency analysis for the algorithm:
+
+1. Sort the items: 
+Time = O(nlogn) 
+Where n is the number of items.
+
+2. Make a reverse sorted list called `availableItems` based on the sorted list: 
+Time = O(n)
+
+3. Main packing loop:
+For each bin, the algorithm looks for the largest number less than or equal to the remaining space in the bin. 
+In the worst case, this could be O(n) for each bin. Since you have 3 bins, this would be:
+Time = 3 * O(n) = O(n) 
+
+Combining these steps, the overall time complexity is:
+O(nlogn) + O(n) + O(n) = O(nlogn)

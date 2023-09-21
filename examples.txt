@@ -1,3 +1,7 @@
+Designed by Will and Chenfei
+
+
+
 Non-optimal example result 
 Bin size: 20 
 Number of items: 15 
@@ -7,6 +11,23 @@ Result:
     Bin 2: [15, 4]
     Bin 3: [15, 3, 2]
     Unused items: 67 13 13 12 9 8 8 7 6
+    Optimal result: 0 remaining spaces [15, 3, 2] [12, 8] [13, 7]
+    Difference from our result: 2 unused spaces divided by 60 total 
+    spaces equals 3.3% unused space.
+
+Non-optimal example result 
+Bin size: 40
+Number of items: 9
+Items: 37 35 35 20 19 15 15 10 7
+Result: 
+    Bin 1: [37]
+    Bin 2: [35]
+    Bin 3: [35]
+    Unused items: 20 19 15 15 10 7
+    Optimal result: 4 remaining spaces [37] [20, 19] [15, 15, 10]
+    Difference from our result: 13 unused spaces minus 4 unused 
+    spaces is 9 unused spaces divided by 120 total spaces equals 
+    7.5% unused spaces.
 
 Optimal example result
 Bin size: 15 
@@ -18,5 +39,13 @@ Result:
     Bin 3: [4, 4, 3, 2]
     Unused items: 18
           
-
+Optimal example result
+Bin size: 20 
+Number of items: 8 
+Items: 12 4 8 15 9 3 1 10
+Result: 
+    Bin 1: [15, 4, 1]
+    Bin 2: [12, 8]
+    Bin 3: [10, 9]
+    Unused items: 3  
 
